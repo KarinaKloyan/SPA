@@ -1,0 +1,25 @@
+
+.albums {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  padding: 20px;
+}
+
+.card {
+  background-color: #f8f8f8;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 20px;
+  transition: 0.3s;
+}
+
+.card:hover {
+  background-color: #f0f0f0;
+}
+
+.card-title {
+  font-size: 18px;
+  color: #333;
+  text-align: center;
+}

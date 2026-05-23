@@ -1,0 +1,30 @@
+
+.todos {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  padding: 20px;
+}
+
+.card {
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 15px;
+}
+
+.card-title {
+  font-size: 18px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.card-completed {
+  font-size: 14px;
+  color: #666;
+}
+
+.card-completed::before {
+  content: "Status: ";
+  font-weight: bold;
+}

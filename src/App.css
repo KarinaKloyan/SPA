@@ -1,0 +1,23 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+a {
+  text-decoration: none;
+  color: black;
+}
+
+ul {
+  list-style: none;
+}
+img {
+  max-width: 100%;
+}
+
+.container {
+  max-width: 1200px;
+  min-height: calc(100vh - 53px - 204px);
+  padding: 40px;
+  margin: 0 auto;
+}
