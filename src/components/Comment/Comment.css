@@ -1,11 +1,3 @@
-
-.comments {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
-  padding: 20px;
-}
-
 .card {
   background-color: #f9f9f9;
   border: 1px solid #ddd;
@@ -23,9 +15,4 @@
   font-size: 14px;
   color: #4a90e2;
   margin-bottom: 12px;
-}
-
-.card-body {
-  color: #666;
-  line-height: 1.5;
 }

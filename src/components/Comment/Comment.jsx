@@ -1,0 +1,27 @@
+import { comments } from "../../index.js";
+import { useNavigate, useParams } from "react-router-dom";
+import "./Comment.css";
+
+function Comment() {
+  const { id } = useParams();
+  const navigate = useNavigate();
+  const handleRedirectBack = () => {
+    navigate(-1);
+  };
+  const commentItem = comments.find((el) => el.id === +id);
+  return commentItem ? (
+    <div className="card">
+      <p className="card-email">{commentItem.email}</p>
+      <p className="card-body">{commentItem.body}</p>
+      <button className="go-back-btn" onClick={handleRedirectBack}>
+        Go Back
+      </button>
+    </div>
+  ) : (
+    <button className="go-back-btn" onClick={handleRedirectBack}>
+      Go Back
+    </button>
+  );
+}
+
+export default Comment;
