@@ -6,14 +6,14 @@ function User() {
   const { id } = useParams();
   const navigate = useNavigate();
 
-    const [userItem, setUserItem] = useState(null)
+  const [userItem, setUserItem] = useState(null);
 
-  useEffect(() =>{
+  useEffect(() => {
     fetch(`https://jsonplaceholder.typicode.com/users/${id}`)
       .then((response) => response.json())
       .then((data) => setUserItem(data))
-      .catch((error) => console.log(error))
-  }, [id])
+      .catch((error) => console.log(error));
+  }, [id]);
 
   const handleRedirectBack = () => {
     navigate(-1);
@@ -39,9 +39,14 @@ function User() {
       </button>
     </div>
   ) : (
-    <button className="go-back-btn" onClick={handleRedirectBack}>
-      Go Back
-    </button>
+    <>
+      <div className="loader-container">
+        <span className="loader"></span>
+      </div>
+      <button className="go-back-btn" onClick={handleRedirectBack}>
+        Go Back
+      </button>
+    </>
   );
 }
 

@@ -4,13 +4,21 @@ import "./Posts.css";
 
 function Posts() {
   const [posts, setPosts] = useState([]);
+  const [loading, setLoading] = useState(true);
   useEffect(() => {
     fetch("https://jsonplaceholder.typicode.com/posts")
       .then((response) => response.json())
-      .then((data) => setPosts(data))
+      .then((data) => {
+        setPosts(data);
+        setLoading(false);
+      })
       .catch((error) => console.log(error));
   }, []);
-  return (
+  return loading ? (
+    <div className="loader-container">
+      <span className="loader"></span>
+    </div>
+  ) : (
     <div className="posts">
       {posts.map((el) => {
         return (

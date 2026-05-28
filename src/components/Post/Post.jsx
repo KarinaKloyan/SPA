@@ -8,7 +8,7 @@ function Post() {
 
   const [postItem, setPostItem] = useState(null);
 
-    useEffect(() => {
+  useEffect(() => {
     fetch(`https://jsonplaceholder.typicode.com/posts/${id}`)
       .then((response) => response.json())
       .then((data) => setPostItem(data))
@@ -30,9 +30,14 @@ function Post() {
       </button>
     </div>
   ) : (
-    <button className="go-back-btn" onClick={handleRedirectBack}>
-      Go Back
-    </button>
+    <>
+      <div className="loader-container">
+        <span className="loader"></span>
+      </div>
+      <button className="go-back-btn" onClick={handleRedirectBack}>
+        Go Back
+      </button>
+    </>
   );
 }
 

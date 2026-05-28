@@ -28,9 +28,14 @@ function Comment() {
       </button>
     </div>
   ) : (
-    <button className="go-back-btn" onClick={handleRedirectBack}>
-      Go Back
-    </button>
+    <>
+      <div className="loader-container">
+        <span className="loader"></span>
+      </div>
+      <button className="go-back-btn" onClick={handleRedirectBack}>
+        Go Back
+      </button>
+    </>
   );
 }
 

@@ -1,8 +1,6 @@
 import React from "react";
 import { Routes, Route, Form } from "react-router-dom";
-
 import {Albums, Comments, Home, Layout, Photos, Post, Posts, Todos, User, Users, Comment, Not} from './components'
-
 import "./App.css";
 
 function App() {

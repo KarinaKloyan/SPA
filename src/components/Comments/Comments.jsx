@@ -3,14 +3,22 @@ import { useState, useEffect } from "react";
 import "./Comments.css";
 
 function Comments() {
-   const [comments, setComments] = useState([]);
+  const [comments, setComments] = useState([]);
+  const [loading, setLoading] = useState(true);
   useEffect(() => {
     fetch("https://jsonplaceholder.typicode.com/comments")
       .then((response) => response.json())
-      .then((data) => setComments(data))
+      .then((data) => {
+        setComments(data);
+        setLoading(false);
+      })
       .catch((error) => console.log(error));
   }, []);
-  return (
+  return loading ? (
+    <div className="loader-container">
+      <span className="loader"></span>
+    </div>
+  ) : (
     <div className="comments">
       {comments.map((el) => {
         return (
