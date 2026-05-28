@@ -1,8 +1,16 @@
 import { NavLink } from 'react-router-dom';
-import { users } from '../../index.js'
+import { useState, useEffect } from 'react';
 import './Users.css'
 
 function Users(){
+  const [users, setUsers] = useState([])
+
+  useEffect(() =>{
+    fetch("https://jsonplaceholder.typicode.com/users")
+      .then((response) => response.json())
+      .then((data) => setUsers(data))
+      .catch((error) => console.log(error))
+  }, [])
       return (
         <div className="users">
           {users.map((el) => {

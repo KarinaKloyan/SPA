@@ -1,16 +1,25 @@
 import { useNavigate, useParams } from "react-router-dom";
-import { users } from "../../index.js";
+import { useState, useEffect } from "react";
 import "../Users/Users.css";
 
 function User() {
   const { id } = useParams();
   const navigate = useNavigate();
 
+    const [userItem, setUserItem] = useState(null)
+
+  useEffect(() =>{
+    fetch(`https://jsonplaceholder.typicode.com/users/${id}`)
+      .then((response) => response.json())
+      .then((data) => setUserItem(data))
+      .catch((error) => console.log(error))
+  }, [id])
+
   const handleRedirectBack = () => {
     navigate(-1);
   };
 
-  const userItem = users.find((el) => el.id === +id);
+  // const userItem = users.find((el) => el.id === +id);
 
   return userItem ? (
     <div className="card">

@@ -1,8 +1,17 @@
-import { todos } from "../../index";
+import { useState, useEffect } from 'react'
 import './Todos.css'
 
 
 function Todos(){
+   const [todos, setTodos] = useState([])
+  
+    useEffect(() =>{
+      fetch("https://jsonplaceholder.typicode.com/todos")
+        .then((response) => response.json())
+        .then((data) => setTodos(data))
+        .catch((error) => console.log(error))
+    }, [])
+  
       return (
         <div className="todos">
           {todos.map((el) => {

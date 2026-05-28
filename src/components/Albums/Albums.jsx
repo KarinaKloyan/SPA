@@ -1,7 +1,14 @@
 import './Albums.css'
-import { albums } from '../..';
+import { useState, useEffect } from 'react';
 
 function Albums(){
+   const [albums, setAlbums] = useState([]);
+  useEffect(() => {
+    fetch("https://jsonplaceholder.typicode.com/albums")
+      .then((response) => response.json())
+      .then((data) => setAlbums(data))
+      .catch((error) => console.log(error));
+  }, []);
     return (
         <div className="albums">
           {albums.map((el) => {

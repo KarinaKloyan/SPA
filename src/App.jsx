@@ -1,17 +1,8 @@
 import React from "react";
-import { Routes, Route } from "react-router-dom";
-import Home from "./components/Home/Home";
-import Posts from "./components/Posts/Posts";
-import Comments from "./components/Comments/Comments";
-import Albums from "./components/Albums/Albums";
-import Photos from "./components/Photos/Photos";
-import Todos from "./components/Todos/Todos";
-import Users from "./components/Users/Users";
-import Layout from "./components/Layout/Layout";
-import Post from "./components/Post/Post";
-import User from "./components/User/User";
-import Comment from "./components/Comment/Comment";
-import Not from "./components/Not/Not";
+import { Routes, Route, Form } from "react-router-dom";
+
+import {Albums, Comments, Home, Layout, Photos, Post, Posts, Todos, User, Users, Comment, Not} from './components'
+
 import "./App.css";
 
 function App() {

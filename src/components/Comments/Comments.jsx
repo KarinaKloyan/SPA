@@ -1,8 +1,15 @@
 import { NavLink } from "react-router-dom";
-import { comments } from "../../index.js";
+import { useState, useEffect } from "react";
 import "./Comments.css";
 
 function Comments() {
+   const [comments, setComments] = useState([]);
+  useEffect(() => {
+    fetch("https://jsonplaceholder.typicode.com/comments")
+      .then((response) => response.json())
+      .then((data) => setComments(data))
+      .catch((error) => console.log(error));
+  }, []);
   return (
     <div className="comments">
       {comments.map((el) => {
